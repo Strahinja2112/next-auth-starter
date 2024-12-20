@@ -11,8 +11,6 @@ export default async function Page() {
 
   return (
     <section className="container mt-10 flex flex-col items-center gap-3 md:absolute md:left-1/2 md:top-1/2 md:mt-0 md:-translate-x-1/2 md:-translate-y-1/2">
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-
       <h1 className="mb-1 font-mono text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
         {m.nextjs_starter_template_headline()}
       </h1>

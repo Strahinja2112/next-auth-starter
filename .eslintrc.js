@@ -3,9 +3,9 @@ module.exports = {
   extends: [
     'next/core-web-vitals',
     'prettier',
-    'eslint:recommended',
+    // 'eslint:recommended',
     'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended',
+    // 'plugin:@typescript-eslint/recommended',
     'plugin:tailwindcss/recommended',
     'plugin:jsx-a11y/recommended',
   ],

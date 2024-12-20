@@ -6,7 +6,7 @@ import { UserDropdown } from '@/components/navbar/user-dropdown';
 import { Link } from '@/lib/i18n';
 import * as m from '@/paraglide/messages';
 
-export const Navbar = async () => {
+export default async function Header() {
   const session = await auth();
 
   return (
@@ -22,4 +22,4 @@ export const Navbar = async () => {
       </div>
     </header>
   );
-};
+}

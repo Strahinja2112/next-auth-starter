@@ -1,6 +1,6 @@
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono, Outfit } from 'next/font/google';
 
-const fontSans = Inter({
+const font = Outfit({
   subsets: ['latin'],
   variable: '--font-sans',
   fallback: ['system-ui', 'arial'],
@@ -12,4 +12,4 @@ const fontMono = JetBrains_Mono({
   fallback: ['system-ui', 'arial'],
 });
 
-export const fonts = [fontSans.variable, fontMono.variable];
+export const fonts = [font.variable, fontMono.variable];

@@ -1,9 +1,8 @@
 import { LanguageProvider } from '@inlang/paraglide-next';
-import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
 import { Footer } from '@/components/footer';
-import { Navbar } from '@/components/navbar/navbar';
+import Header from '@/components/navbar/header';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Toaster } from '@/components/ui/toaster';
@@ -13,8 +12,9 @@ import { cn } from '@/lib/utils';
 import { languageTag } from '@/paraglide/runtime.js';
 
 import '@/styles/globals.css';
+import { Metadata } from 'next';
 
-export function generateMetadata() {
+export function generateMetadata(): Metadata {
   return {
     metadataBase: new URL(siteConfig.url()),
     title: {
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <html lang={languageTag()} suppressHydrationWarning>
         <body className={cn('min-h-screen font-sans', fonts)}>
           <ThemeProvider attribute="class">
-            <Navbar />
+            <Header />
             {children}
             <ThemeSwitcher className="absolute bottom-5 right-5 z-10" />
             <Footer />
