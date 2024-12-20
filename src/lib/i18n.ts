@@ -1,3 +1,4 @@
+import * as m from '@/paraglide/messages';
 import { Middleware, Navigation, PrefixStrategy } from '@inlang/paraglide-next';
 
 import type { AvailableLanguageTag } from '@/paraglide/runtime';
@@ -13,3 +14,5 @@ const strategy = PrefixStrategy<AvailableLanguageTag>({
 export const middleware = Middleware({ strategy });
 export const { Link, useRouter, usePathname, redirect, permanentRedirect } =
   Navigation({ strategy });
+
+export const content = m;

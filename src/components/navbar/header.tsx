@@ -13,7 +13,7 @@ export default async function Header() {
     <header className="w-full border-b backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-mono text-lg font-bold">
-          {m.app_name()}
+          {m.appName()}
         </Link>
         <div className="flex items-center gap-2">
           {session ? <UserDropdown session={session} /> : <SignInButton />}

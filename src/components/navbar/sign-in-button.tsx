@@ -1,11 +1,11 @@
 'use client';
 
-import { useTransition } from 'react';
 import { signIn } from 'next-auth/react';
+import { useTransition } from 'react';
 
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import * as m from '@/paraglide/messages';
+import { content } from '@/lib/i18n';
 
 export const SignInButton = () => {
   const [isPending, startTransition] = useTransition();
@@ -19,7 +19,7 @@ export const SignInButton = () => {
   return (
     <Button onClick={handleSignIn} disabled={isPending}>
       {isPending && <Icons.loader className="mr-2 size-4 animate-spin" />}
-      {m.sign_in()}
+      {content.signIn()}
     </Button>
   );
 };

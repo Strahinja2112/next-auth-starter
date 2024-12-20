@@ -1,7 +1,7 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { helloAction } from '@/actions/hello-action';
@@ -43,7 +43,7 @@ export const HeroForm = () => {
             <FormItem>
               <FormControl>
                 <Input
-                  placeholder={m.input_placeholder()}
+                  placeholder={m.inputPlaceholder()}
                   className={cn(
                     'md:w-96',
                     form.formState.errors.name && 'border-destructive'
@@ -55,7 +55,7 @@ export const HeroForm = () => {
           )}
         />
         <Button variant="secondary" type="submit">
-          {m.submit_form()}
+          {m.submitForm()}
         </Button>
       </form>
     </Form>

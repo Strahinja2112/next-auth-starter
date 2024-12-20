@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import Image from 'next/image';
 import { Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
+import Image from 'next/image';
+import { useState } from 'react';
 
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
@@ -22,7 +22,7 @@ import * as m from '@/paraglide/messages';
 export const UserDropdown = ({ session: { user } }: { session: Session }) => {
   const [isPending, setIsPending] = useState(false);
 
-  const handleCreateCheckoutSession = async () => {
+  async function handleCreateCheckoutSession() {
     setIsPending(true);
 
     const res = await fetch('/api/stripe/checkout-session');
@@ -31,7 +31,7 @@ export const UserDropdown = ({ session: { user } }: { session: Session }) => {
     // await stripe!.redirectToCheckout({
     //   sessionId: checkoutSession.id,
     // });
-  };
+  }
 
   return (
     <DropdownMenu>
@@ -45,7 +45,7 @@ export const UserDropdown = ({ session: { user } }: { session: Session }) => {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>{m.my_account()}</DropdownMenuLabel>
+        <DropdownMenuLabel>{m.myAccount()}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="flex flex-col items-center justify-center p-2">
           <Image
@@ -62,20 +62,20 @@ export const UserDropdown = ({ session: { user } }: { session: Session }) => {
             className="w-64"
           >
             {user?.isActive ? (
-              m.you_are_a_pro()
+              m.youAreAPro()
             ) : (
               <>
                 {isPending && (
                   <Icons.loader className="mr-2 size-4 animate-spin" />
                 )}
-                {m.upgrade_to_pro_cta()}
+                {m.upgradeToProCta()}
               </>
             )}
           </Button>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
-          <Icons.logOut className="mr-2 size-4" /> <span>{m.log_out()}</span>
+          <Icons.logOut className="mr-2 size-4" /> <span>{m.logOut()}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

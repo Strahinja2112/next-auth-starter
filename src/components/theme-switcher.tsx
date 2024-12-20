@@ -1,7 +1,7 @@
 'use client';
 
-import { ComponentProps } from 'react';
 import { useTheme } from 'next-themes';
+import { ComponentProps } from 'react';
 
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
@@ -19,7 +19,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
       className={className}
       variant="secondary"
       size="icon"
-      aria-label={m.theme_toggle_label()}
+      aria-label={m.themeToggleLabel()}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <Icons.sun className="dark:hidden" />
