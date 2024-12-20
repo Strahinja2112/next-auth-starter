@@ -49,13 +49,13 @@
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
 
-		--dots: 240 3.7% 10.9%;
+		--dots: 240 3.7% 8.9%;
 	}
 }
 
 @layer base {
 	* {
-		@apply border-border;
+		@apply border-border font-sans;
 	}
 	body {
 		@apply bg-background text-foreground;

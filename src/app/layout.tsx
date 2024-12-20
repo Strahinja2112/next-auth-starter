@@ -1,11 +1,7 @@
 import { LanguageProvider } from "@inlang/paraglide-next";
 import { PropsWithChildren } from "react";
 
-import { Footer } from "@/components/footer";
-import Header from "@/components/navbar/header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/lib/config";
 import { fonts } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -14,6 +10,7 @@ import { ViewTransitions } from "next-view-transitions";
 
 import "@/styles/globals.css";
 import { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 
 export function generateMetadata(): Metadata {
 	return {
@@ -56,15 +53,17 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<LanguageProvider>
 			<ViewTransitions>
 				<html lang={languageTag()} suppressHydrationWarning>
-					<body className={cn("min-h-screen font-sans", fonts)}>
-						<div className="dot-grid" />
-						<ThemeProvider attribute="class">
-							<Header />
-							{children}
-							<ThemeSwitcher className="absolute bottom-5 right-5 z-10" />
-							<Footer />
-							<Toaster />
-						</ThemeProvider>
+					<body className={cn("flex min-h-screen flex-col font-sans", fonts)}>
+						<SessionProvider>
+							<div className="dot-grid" />
+							<ThemeProvider
+								attribute="class"
+								defaultTheme="dark"
+								disableTransitionOnChange
+							>
+								{children}
+							</ThemeProvider>
+						</SessionProvider>
 					</body>
 				</html>
 			</ViewTransitions>
