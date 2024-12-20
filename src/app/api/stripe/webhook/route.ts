@@ -1,8 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import Stripe from 'stripe';
+import { NextRequest } from 'next/server';
 
-import { env } from '@/env.mjs';
-import prisma from '@/lib/prisma';
 // import { stripeServer } from '@/lib/stripe';
 
 const webhookHandler = async (req: NextRequest) => {

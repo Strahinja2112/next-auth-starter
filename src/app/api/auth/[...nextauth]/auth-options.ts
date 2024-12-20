@@ -8,7 +8,7 @@ import prisma from '@/lib/prisma';
 // import { stripeServer } from '@/lib/stripe';
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(prisma) as Adapter,
+  adapter: PrismaAdapter(prisma!) as Adapter,
   providers: [
     GitHubProvider({
       clientId: env.GITHUB_ID,

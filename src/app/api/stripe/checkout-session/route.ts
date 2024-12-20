@@ -1,11 +1,9 @@
 import { NextResponse } from 'next/server';
 
-import { auth } from '@/app/api/auth/[...nextauth]/auth-options';
-import { env } from '@/env.mjs';
 // import { stripeServer } from '@/lib/stripe';
 
 export const GET = async () => {
-  const session = await auth();
+  // const session = await auth();
 
   // if (!session?.user) {
   //   return NextResponse.json(

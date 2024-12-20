@@ -55,6 +55,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <LanguageProvider>
       <html lang={languageTag()} suppressHydrationWarning>
         <body className={cn('min-h-screen font-sans', fonts)}>
+          <div className="dot-grid" />
           <ThemeProvider attribute="class">
             <Header />
             {children}

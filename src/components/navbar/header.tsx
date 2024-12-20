@@ -1,6 +1,6 @@
+import { auth } from '@/app/api/auth/[...nextauth]/auth-options';
 import { LanguageSwitcher } from './language-switcher';
 
-import { auth } from '@/app/api/auth/[...nextauth]/auth-options';
 import { SignInButton } from '@/components/navbar/sign-in-button';
 import { UserDropdown } from '@/components/navbar/user-dropdown';
 import { Link } from '@/lib/i18n';
@@ -10,7 +10,7 @@ export default async function Header() {
   const session = await auth();
 
   return (
-    <header className="w-full border-b">
+    <header className="w-full border-b backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-mono text-lg font-bold">
           {m.app_name()}
