@@ -1,6 +1,6 @@
-import { JetBrains_Mono, Outfit } from "next/font/google";
+import { JetBrains_Mono, Lexend, Outfit } from "next/font/google";
 
-const font = Outfit({
+const font = Lexend({
 	subsets: ["latin"],
 	variable: "--font-sans",
 	fallback: ["system-ui", "arial"],

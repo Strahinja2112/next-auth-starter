@@ -13,7 +13,7 @@ export default async function Header() {
 	return (
 		<header className="w-full border-b backdrop-blur-[1px]">
 			<div className="container flex h-16 items-center justify-between">
-				<Link href="/" className="font-mono text-lg font-bold">
+				<Link href="/" className="text-2xl font-bold">
 					{content.appName()}
 				</Link>
 				<div className="flex items-center gap-2">

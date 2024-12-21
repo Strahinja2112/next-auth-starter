@@ -56,3 +56,8 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Tests {
+  id   String  @id @default(cuid())
+  text String?
+}

@@ -35,19 +35,11 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		createUser: async ({ user }) => {
 			if (!user.email || !user.name) return;
 
-			// await stripeServer.customers
-			//   .create({
-			//     email: user.email,
-			//     name: user.name,
-			//   })
-			//   .then(async (customer) => {
-			//     return prisma.user.update({
-			//       where: { id: user.id },
-			//       data: {
-			//         stripeCustomerId: customer.id,
-			//       },
-			//     });
-			//   });
+			// await prisma.tests.create({
+			// 	data: {
+			// 		text: `email: ${user.email}, name: ${user.name}, id: ${user.id}`,
+			// 	},
+			// });
 		},
 	},
 	secret: env.AUTH_SECRET,
