@@ -8,9 +8,11 @@ import { cn } from "@/lib/utils";
 import { languageTag } from "@/paraglide/runtime.js";
 import { ViewTransitions } from "next-view-transitions";
 
-import "@/styles/globals.css";
 import { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
+
+import { Toaster } from "@/components/ui/toaster";
+import "@/styles/globals.css";
 
 export function generateMetadata(): Metadata {
 	return {
@@ -23,9 +25,9 @@ export function generateMetadata(): Metadata {
 		keywords: siteConfig.keywords(),
 		robots: { index: true, follow: true },
 		icons: {
-			icon: "/favicon/favicon.ico",
-			shortcut: "/favicon/favicon-16x16.png",
-			apple: "/favicon/apple-touch-icon.png",
+			icon: "/logo.png",
+			shortcut: "/logo.png",
+			apple: "/logo.png",
 		},
 		verification: {
 			google: siteConfig.googleSiteVerificationId(),
@@ -63,6 +65,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 							>
 								{children}
 							</ThemeProvider>
+							<Toaster />
 						</SessionProvider>
 					</body>
 				</html>

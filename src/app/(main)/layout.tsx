@@ -2,8 +2,7 @@ import Protected from "@/components/auth/protected";
 import { Footer } from "@/components/footer";
 import Header from "@/components/navbar/header";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { Toaster } from "@/components/ui/toaster";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 export default function MainLayout({ children }: PropsWithChildren) {
 	return (
@@ -14,7 +13,6 @@ export default function MainLayout({ children }: PropsWithChildren) {
 			</main>
 			<ThemeSwitcher className="absolute bottom-5 right-5 z-10" />
 			<Footer />
-			<Toaster />
 		</Protected>
 	);
 }

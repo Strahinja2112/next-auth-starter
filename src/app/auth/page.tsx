@@ -1,8 +1,11 @@
 "use client";
 
 import RedirectLoggedIn from "@/components/auth/redirect-logged-in";
+import { Icons } from "@/components/icons";
+import { SignInButton } from "@/components/navbar/sign-in-button";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ArrowLeft, Github, Mail } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ArrowLeft, Github, LucideIcon, Mail } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
@@ -35,7 +38,7 @@ export default function AuthPage() {
 					<div className="w-full max-w-md space-y-8">
 						<div className="relative z-10 space-y-6 text-white">
 							<div className="flex justify-center">
-								<Image src="/logo.png" alt="Logo" width={64} height={64} />
+								<Icons.logo color="white" size={128} />
 							</div>
 							<h2 className="mt-6 text-center font-sans text-6xl text-white">
 								Welcome back
@@ -43,18 +46,19 @@ export default function AuthPage() {
 							<p className="mt-2 text-center text-sm text-gray-300">
 								Sign in to your account to continue
 							</p>
-							<div className="mt-8 space-y-6">
+							<FontAwesomeIcon icon={"google"} size={"3x"} />
+							<div className="mt-8 space-y-4">
 								<Button
-									className="w-full bg-blue-600 text-white hover:bg-blue-700"
+									className="w-full"
 									variant="outline"
 									onClick={() => handleLogin("google")}
 									disabled={isPending}
 								>
-									<Mail className="mr-2 size-4" />
+									<Icons.google className="mr-2 size-4" />
 									Sign in with Google
 								</Button>
 								<Button
-									className="w-full bg-gray-700 text-white hover:bg-gray-600"
+									className="w-full"
 									variant="outline"
 									onClick={() => handleLogin("github")}
 									disabled={isPending}
@@ -66,9 +70,9 @@ export default function AuthPage() {
 						</div>
 					</div>
 				</div>
-				<div className="hidden w-1/2 items-center justify-center bg-gray-800 lg:flex">
+				<div className="hidden w-1/2 items-center justify-center lg:flex">
 					<Image
-						src="/auth.jpg"
+						src="/auth1.jpg"
 						alt="Authentication illustration"
 						width={1400}
 						height={1400}

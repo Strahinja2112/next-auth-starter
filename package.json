@@ -32,6 +32,11 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@hookform/resolvers": "^3.9.1",
     "@inlang/paraglide-next": "0.7.4",
     "@prisma/client": "^6.0.1",
@@ -51,6 +56,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.1",
+    "react-tech-icons": "^1.6.2",
     "stripe": "^17.4.0",
     "tailwind-merge": "^2.5.5",
     "zod": "^3.24.1"
