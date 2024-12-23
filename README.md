@@ -38,34 +38,6 @@
 
 Easily deploy your Next.js app with <a href="https://vercel.com/">Vercel</a> by clicking: [deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/Skolaczk/next-starter)
 
-## 🎯 Getting started
-
-### 1. Clone this template in one of three ways
-
-```bash
-git clone https://github.com/Strahinja2112/next-auth-starter project-name
-```
-
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Set up environment variables
-
-Create `.env` file and set env variables from `.env.example` file.
-
-### 4. Run the dev server
-
-You can start the server using this command:
-
-```bash
-npm run dev
-```
-
-and open http://localhost:3000/ to see this app.
-
 ## ❤️ Support
 
 If you liked the project, I will appreciate if you leave a star. 🌟😊
